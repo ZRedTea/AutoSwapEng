@@ -1,15 +1,18 @@
 from scipy.constants import Btu_IT
 
 from PySE_General import *
+from PySE_Select import SwapSelect
 from PySE_Spell import SwapSpell
 from PySE_Listen import SwapListen
 
 def main():
     x1,x2,y1,y2 = GetXYPG()
     OutXY(x1,x2,y1,y2)
-    GetScreen(x1,x2,y1,y2)
+    GetScreen(x1,x2,y1,y2,'SE.jpg')
     #keyboardtest(x1,x2,y1,y2)
-    SwapSpell(x1,x2,y1,y2)
+    #SwapSpell(x1,x2,y1,y2)
+    #SwapListen(x1,x2,y1,y2)
+    SwapSelect(x1,x2,y1,y2)
     # Get = GetOCR()
     # for each in Get:
     #     print(each[1][0])

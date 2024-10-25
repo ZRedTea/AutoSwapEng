@@ -40,8 +40,8 @@ def SwapSpell(x1,x2,y1,y2):
     CAPON = False
     RUN = True
     while(RUN):
-        GetScreen(x1,x2,y1,y2)
-        List = GetOCR()
+        GetScreen(x1,x2,y1,y2,'SE.jpg')
+        List = GetOCR('SE.jpg')
         rad = True
         for keyword in List:
             print(keyword[1][0])

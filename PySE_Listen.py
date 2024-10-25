@@ -25,8 +25,8 @@ def SwapListen(x1,x2,y1,y2):
     # TM = 0
     Conti = True
     while Conti:
-        GetScreen(x1,x2,y1,y2)
-        List = GetOCR()
+        GetScreen(x1,x2,y1,y2,'SE.jpg')
+        List = GetOCR('SE,jpg')
         for keyword in List:
             if("当前卡包已完成" in keyword[1][0]):
                 pg.click(Button3X, Button3Y)

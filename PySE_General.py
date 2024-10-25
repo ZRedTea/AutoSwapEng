@@ -3,16 +3,16 @@ from paddleocr import PaddleOCR as OCR
 import pyscreenshot as ImageGrab
 import pyautogui as pg
 
-pg.PAUSE = 0.1
+pg.PAUSE = 0.05
 
 def PAUSE(x):
     for i in range(0,x):
         print(x-i)
         time.sleep(1)
 
-def GetOCR():
+def GetOCR(path):
     ocr = OCR(use_angle_cls = True, lang = "ch")
-    img_SE = 'SE.jpg'
+    img_SE = path
     result = ocr.ocr(img_SE, cls=True)
     result = result[0]
     return result
@@ -22,12 +22,16 @@ def OutXY(x1,x2,y1,y2):
     print(x1,x2)
     print(y1,y2)
 
-def GetScreen(x1,x2,y1,y2):
+def GetScreen(x1,x2,y1,y2,path):
     img = ImageGrab.grab(bbox=(x1,y1,x2,y2))
-    img.save('SE.jpg')
+    img.save(path)
 
 def GetPos(a,b,c):
     return ((b-a)*c+a)
+
+def ZClick(x,y):
+    pg.moveTo(x,y)
+    pg.click()
 
 def GetXY(x1,x2,y1,y2):
     x1,x2 = input("请输入最左端和最右端的坐标值")

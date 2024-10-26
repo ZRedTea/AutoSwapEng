@@ -29,6 +29,11 @@ Made by ZRedTea
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
 - [Escrcpy](https://github.com/viarotel-org/escrcpy/tree/main)
 
+## 赞助
+如果这个项目帮到了你，可以请我吃点小零食，让我能更好地维护这个项目\
+<img src="https://github.com/Khimowski/AutoSwapEng/blob/screenshots/Alipay.jpg" width="30%">
+<img src="https://github.com/Khimowski/AutoSwapEng/blob/screenshots/Wechat.jpg" width="30%">
+
 ## 贡献者
 > 哈哈，就我自己
 <a href="https://github.com/Khimowski/AutoSwapEng/graphs/contributors">

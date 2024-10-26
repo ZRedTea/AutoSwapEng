@@ -31,3 +31,6 @@ Made by ZRedTea
 
 ## 贡献者
 哈哈，就我自己
+<a href="https://github.com/Khimowski/AutoSwapEng/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Khimowski/AutoSwapEng" alt="contributors" />
+</a>

@@ -1,6 +1,6 @@
 # AutoSwapEng
 使用PyautoGUI与PaddleOCR技术写出的翻转外语自动化项目\
-Made by ZRedTea\
+Made by ZRedTea
 
 ## 开源协议
 
@@ -10,12 +10,12 @@ Made by ZRedTea\
 
 [查看发布地址](https://github.com/Khimowski/AutoSwapEng/releases)
 
-## python库
+## Python库
 用不了大概率是缺库，下面是运行需要的一些基本库：\
-1.pyautogui python自动化操作库\
-2.PaddlePaddle OCR前置库\
-3.PaddleOCR python文字识别库\
-4.setuptools 模型安装库\
+- pyautogui python自动化操作库\
+- PaddlePaddle OCR前置库\
+- PaddleOCR python文字识别库\
+- setuptools 模型安装库\
 
 ## 获得帮助
 > 如果有BUG之类的请反馈，尽量使用Github自带的Issues

@@ -1,8 +1,9 @@
 
 # AutoSwapEng
 翻转外语自动化脚本项目\
+Made by ZRedTea\
 本项目使用[MIT](https://mit-license.org/)开源协议
-Made by ZRedTea
+
 
 用不了大概率是缺库，下面是运行需要的一些基本库：\
 1.pyautogui python自动化操作库\

@@ -11,11 +11,11 @@ Made by ZRedTea
 [查看发布地址](https://github.com/Khimowski/AutoSwapEng/releases)
 
 ## Python库
-用不了大概率是缺库，下面是运行需要的一些基本库：\
-- pyautogui python自动化操作库\
-- PaddlePaddle OCR前置库\
-- PaddleOCR python文字识别库\
-- setuptools 模型安装库\
+用不了大概率是缺库，下面是运行需要的一些基本库：
+- pyautogui python自动化操作库
+- PaddlePaddle OCR前置库
+- PaddleOCR python文字识别库
+- setuptools 模型安装库
 
 ## 获得帮助
 > 如果有BUG之类的请反馈，尽量使用Github自带的Issues

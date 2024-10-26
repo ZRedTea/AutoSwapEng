@@ -1,6 +1,3 @@
-import numpy as np
-from fuzzywuzzy import fuzz
-
 from PySE_General import *
 
 def SwapSelect(x1,x2,y1,y2):

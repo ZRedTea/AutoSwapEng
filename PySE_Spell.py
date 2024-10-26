@@ -1,7 +1,3 @@
-from pickle import FALSE
-
-from scipy.stats import false_discovery_control
-
 from PySE_General import *
 
 def SwapSpell(x1,x2,y1,y2):

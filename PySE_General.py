@@ -2,6 +2,8 @@ import time
 from paddleocr import PaddleOCR as OCR
 import pyscreenshot as ImageGrab
 import pyautogui as pg
+from fuzzywuzzy import fuzz
+
 
 pg.PAUSE = 0.05
 

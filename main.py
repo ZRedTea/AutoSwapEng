@@ -11,8 +11,8 @@ def main():
     GetScreen(x1,x2,y1,y2,'SE.jpg')
     #keyboardtest(x1,x2,y1,y2)
     #SwapSpell(x1,x2,y1,y2)
-    #SwapListen(x1,x2,y1,y2)
-    SwapSelect(x1,x2,y1,y2)
+    SwapListen(x1,x2,y1,y2)
+    #SwapSelect(x1,x2,y1,y2)
     # Get = GetOCR()
     # for each in Get:
     #     print(each[1][0])

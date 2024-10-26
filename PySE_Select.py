@@ -46,6 +46,10 @@ def SwapSelect(x1,x2,y1,y2):
     CLICKX = GetPos(x1,x2,CLICK[0])
     CLICKY = GetPos(y1,y2,CLICK[1])
 
+    FINI = [0.5069, 0.8755]
+    FINIX = GetPos(x1, x2, FINI[0])
+    FINIY = GetPos(y1, y2, FINI[1])
+
     SELEC = [0.5060,0.5284,0.5938,0.6633,0.7353]
     SELECY = [0 for _ in range(10)]
     SELECX = GetPos(x1,x2,SELEC[0])
@@ -64,9 +68,20 @@ def SwapSelect(x1,x2,y1,y2):
     n = 0
     times = 0
     while(RUN):
+        GetScreen(x1,x2,y1,y2,'SE.jpg')
+        SE = GetOCR('SE.jpg')
+        for kse in SE:
+            kse = kse[1][0]
+            if("恭喜你完成卡包学习" in kse):
+                ZClick(FINIX,FINIY)
+                return
+            if("遇到错词不要怕" in kse):
+                ZClick(FINIX,FINIY)
+
+
         SEL = True
         ZClick(CLICKX,CLICKY)
-        time.sleep(0.2)
+        # time.sleep(0.2)
         GetScreen(PTESTX1,PTESTX2,PTESTY1,PTESTY2,'TEST.jpg')
         testx = GetOCR('TEST.jpg')
         if(testx != None):
@@ -196,6 +211,9 @@ def SwapSelect(x1,x2,y1,y2):
                             similar[i] += simi
                             bj+=1
                         else:
+                            GETWORDNR[thisw][k] = GETWORDNR[thisw][k][GETWORDCD[thisw][k]:]
+                            SELWORDNR[i][j] = SELWORDNR[i][j][SELWORDCD[i][j]:]
+
                             print(GETWORDNR[thisw][k])
                             print(SELWORDNR[i][j])
                             temp1 = ['' for _ in range(20)]
@@ -246,13 +264,9 @@ def SwapSelect(x1,x2,y1,y2):
             print("最大匹配度为",max)
             print("点击坐标为",SELECX,SELECY[max])
             ZClick(SELECX,SELECY[max])
-        time.sleep(1)
         pg.moveTo(SLIDEX,SLIDEY1)
         pg.dragTo(SLIDEX,SLIDEY2,duration=0.2)
-        time.sleep(0.8)
-        times += 1
-        if(times >= 50):
-            RUN = False
+        time.sleep(0.6)
 
 
 

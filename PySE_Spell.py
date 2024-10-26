@@ -19,7 +19,7 @@ def SwapSpell(x1,x2,y1,y2):
     CAPS = [0.0813, 0.6091]
     CONT = [0.8650, 0.8464]
     DELT = [0.9315, 0.6045]
-    FINI = [0.5069, 0.8755]
+
 
     kbx1,kbx2,kby1,kby2 = GetKBPG()
     for i in range(0, 26):
@@ -34,17 +34,25 @@ def SwapSpell(x1,x2,y1,y2):
     DELTX = GetPos(kbx1, kbx2, DELT[0])
     DELTY = GetPos(kby1, kby2, DELT[1])
 
+    FINI = [0.5069, 0.8755]
     FINIX = GetPos(x1, x2, FINI[0])
     FINIY = GetPos(y1, y2, FINI[1])
+
+    STAR = [0.5052, 0.5879]
+    STARX = GetPos(x1, x2, STAR[0])
+    STARY = GetPos(y1, y2, STAR[1])
 
     CAPON = False
     RUN = True
     while(RUN):
         GetScreen(x1,x2,y1,y2,'SE.jpg')
         List = GetOCR('SE.jpg')
+
         rad = True
         for keyword in List:
             print(keyword[1][0])
+            if("温馨提示" in keyword[1][0]):
+                ZClick(STARX,STARY)
             if("提示" in keyword[1][0]):
                 rad = False
                 need = keyword[1][0]

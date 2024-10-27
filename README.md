@@ -17,6 +17,8 @@ Made by ZRedTea
 - PaddleOCR python文字识别库
 - setuptools 模型安装库
 
+注意：自版本Release 1.1起，本项目已支持自动下载缺失的库
+
 ## 获得帮助
 > 如果有BUG之类的请反馈，尽量使用Github自带的Issues
 

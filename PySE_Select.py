@@ -16,7 +16,7 @@ def SwapSelect(x1,x2,y1,y2):
     KWORDY1 = int(GetPos(y1, y2, KWORD[2]))
     KWORDY2 = int(GetPos(y1, y2, KWORD[3]))
 
-    PCHIN = [0.1421, 0.9081, 0.4891, 0.7788]
+    PCHIN = [0.1421, 0.9081, 0.4691, 0.7788]
     PCHINX1 = int(GetPos(x1, x2, PCHIN[0]))
     PCHINX2 = int(GetPos(x1, x2, PCHIN[1]))
     PCHINY1 = int(GetPos(y1, y2, PCHIN[2]))
@@ -54,6 +54,7 @@ def SwapSelect(x1,x2,y1,y2):
         SELECY[i] = GetPos(y1,y2,SELEC[i])
 
     GETWORDNR = [['' for _ in range(100)] for _ in range(100)]
+    tGETWORDNR = [['' for _ in range(100)] for _ in range(100)]
     GETWORDCD = [[0 for _ in range(100)] for _ in range(100)]
     GETWORDSX = ['' for _ in range(100)]
     GETWORDSZ = [0 for _ in range(100)]
@@ -78,7 +79,7 @@ def SwapSelect(x1,x2,y1,y2):
 
         SEL = True
         ZClick(CLICKX,CLICKY)
-        # time.sleep(0.2)
+        time.sleep(0.2)
         GetScreen(PTESTX1,PTESTX2,PTESTY1,PTESTY2,'TEST.jpg')
         testx = GetOCR('TEST.jpg')
         if(testx != None):
@@ -137,6 +138,11 @@ def SwapSelect(x1,x2,y1,y2):
                     else:
                         GETWORDNR[n][GETWORDSZ[n]] += chinx[i]
                     i += p
+            print("获得的词为",GETWORDSX[n])
+            print("获得的词的内容为:")
+            for k in range(1,GETWORDSZ[n]+1):
+                print(GETWORDNR[n][k])
+            print("")
             n += 1
         else:
             GetScreen(PSELCX1, PSELCX2, PSELCY1, PSELCY2, 'SELECT.jpg')
@@ -158,6 +164,11 @@ def SwapSelect(x1,x2,y1,y2):
                 sele = temp
                 i = 2
                 test = ['' for _ in range(10)]
+                print("选项:",witchSele)
+                print("获得的词的内容为:")
+                for k in (1,SELWORDSZ[witchSele]+1):
+                    print(SELWORDNR[witchSele][k])
+                print("")
                 witchSele += 1
                 while (i < len(sele)):
                     p = 1
@@ -208,32 +219,32 @@ def SwapSelect(x1,x2,y1,y2):
                             similar[i] += simi
                             bj+=1
                         else:
-                            GETWORDNR[thisw][k] = GETWORDNR[thisw][k][GETWORDCD[thisw][k]:]
+                            tGETWORDNR[thisw][k] = GETWORDNR[thisw][k][GETWORDCD[thisw][k]:]
                             SELWORDNR[i][j] = SELWORDNR[i][j][SELWORDCD[i][j]:]
 
-                            print(GETWORDNR[thisw][k])
-                            print(SELWORDNR[i][j])
+                            print("原词为：",tGETWORDNR[thisw][k])
+                            print("选项",i,"为",SELWORDNR[i][j])
                             temp1 = ['' for _ in range(20)]
                             temp2 = ['' for _ in range(20)]
                             tmp1 = 0
                             tmp2 = 0
-                            for x in GETWORDNR[thisw][k]:
-                                print("x为",x)
+                            for x in tGETWORDNR[thisw][k]:
+                                #print("x为",x)
                                 if(x in NO):
                                     tmp1 += 1
-                                    print("词数+1")
+                                    #print("词数+1")
                                 else:
                                     temp1[tmp1] += x
-                                    # print("temp1为",temp1)
+                                    print("temp1为",temp1)
                             for y in SELWORDNR[i][j]:
-                                print("y为",y)
+                                #print("y为",y)
                                 if(y in NO):
                                     tmp2 += 1
-                                    print("词数+1")
+                                    #print("词数+1")
                                 else:
                                     temp2[tmp2] += y
 
-                                    # print("temp2为",temp2)
+                                    print("temp2为",temp2)
                             # print("前词词数为",tmp1)
                             # print("后词词数为",tmp2)
                             for x in range(0,tmp1+1):
@@ -241,6 +252,8 @@ def SwapSelect(x1,x2,y1,y2):
                                     print(temp1[x],temp2[y])
 
                                     simi = fuzz.ratio(temp1[x],temp2[y])
+                                    if(temp1[x] == '' or temp2[y] == ''):
+                                        simi = 0
                                     print("此相似度为",simi)
                                     similar[i] += simi
                                     if(simi >= 98):
@@ -263,7 +276,7 @@ def SwapSelect(x1,x2,y1,y2):
             ZClick(SELECX,SELECY[max])
         pg.moveTo(SLIDEX,SLIDEY1)
         pg.dragTo(SLIDEX,SLIDEY2,duration=0.2)
-        time.sleep(0.6)
+        time.sleep(0.8)
 
 
 

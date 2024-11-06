@@ -13,9 +13,9 @@ def PAUSE(x):
         time.sleep(1)
 
 def GetOCR(path):
-    ocr = OCR(use_angle_cls = True, lang = "ch")
+    ocr = OCR(use_angle_cls = True,use_gpu = True,use_npu = True, lang = "ch")
     img_SE = path
-    result = ocr.ocr(img_SE, cls=True)
+    result = ocr.ocr(img_SE, cls=True,)
     result = result[0]
     return result
 

@@ -59,12 +59,14 @@ def SwapSpell(x1,x2,y1,y2):
                 pg.click()
         if(RUN):
             if(rad):
+                pg.PAUSE = 0.01
                 for i in range(0,20):
                     pg.moveTo(KBX[0], KBY[0])
                     pg.click()
                 pg.moveTo(CONTX, CONTY)
                 pg.click()
             else:
+                pg.PAUSE = 0.05
                 pg.moveTo(DELTX, DELTY)
                 pg.click()
                 for word in need:

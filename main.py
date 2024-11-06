@@ -2,9 +2,10 @@ import sys
 import pip
 import importlib
 
-ASE_VERSION = "RELEASE 1.0"
+ASE_VERSION = "RELEASE 1.2"
 
 def install_module(module_name: str):
+    print(f'{module_name} 检测中')
     try:
         importlib.import_module(module_name)
     except ImportError:

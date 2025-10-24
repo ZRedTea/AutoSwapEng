@@ -2,6 +2,12 @@
 使用PyautoGUI与PaddleOCR技术写出的翻转外语自动化项目\
 Made by ZRedTea
 
+## 已停止维护
+
+开发者已经到了大三，不需要继续进行翻转外语，因此项目已停止维护
+如你需要正在维护的反转外语脚本，请移至SaltedDoubao的安卓端翻转外语脚本项目
+[项目地址](https://github.com/SaltedDoubao/AutoSwapEng-Android)
+
 ## 开源协议
 
 本项目使用[MIT](https://mit-license.org/)开源协议
